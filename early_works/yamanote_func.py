@@ -1,14 +1,18 @@
 # © 2021 ushita37
 
 import numpy as np
-import pandas as pd
+# import pandas as pd
 
 # 定数定義
 UCHIMAWARI = 1
 SOTOMAWARI = -1
 
-ekimei = pd.read_csv('stationName.csv', header=None, encoding='Shift-JIS').values.tolist()
-ekimeiList = ekimei[0]
+# ekimei = pd.read_csv('stationName.csv', header=None, encoding='Shift-JIS').values.tolist()
+# ekimeiList = ekimei[0]
+
+# pandasを使うと正常に動作しないことがあるので、上記の4・11・12行目をコメントアウトし、以下の14・15行目を実行している
+F = open('stationName.csv')
+ekimeiList = F.readline().replace('\n', '').split(',')
 
 a = np.loadtxt('rinnsetsuValueOnly2.csv',delimiter=',',dtype='int64')
 

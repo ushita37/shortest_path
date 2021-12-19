@@ -4,20 +4,20 @@ ushita37
 
 ## 1. これは何か
 
-これは路線図を元にしたグラフで始点から終点までの最短路を求めるプログラムである  
+これは路線図を元にしたグラフで始点から終点までの最短路を求めるプログラムである。  
 
 ## 2. shortest_path_process3.pyの動かし方
 shortest_path_process3.pyで使用したグラフの図はprocess3_graph.PNGを参照  
-図中のvA～vJは点の名前を、①～⑭は辺の名前を、○の隣の数字は辺の重みを、それぞれ表している  
+図中のvA～vJは点の名前を、①～⑭は辺の名前を、○の隣の数字は辺の重みを、それぞれ表している。  
 
 - shortest_path_process3.pyを実行する
 
 ```
 C:\Python>python shortest_path_process3.py 
 ```
-- `始点を入力してください>`と表示が出たら、グラフ上の点のうち1つを選んで半角英数で入力する
-- `終点を入力してください>`　と表示が出たら、先に入力した点とは異なる点を1つ選んで半角英数で入力する
-- そうすると始点から終点までの最短路が表示される
+- `始点を入力してください>`と表示が出たら、グラフ上の点のうち1つを選んで半角英数で入力する。
+- `終点を入力してください>`　と表示が出たら、先に入力した点とは異なる点を1つ選んで半角英数で入力する。
+- そうすると始点から終点までの最短路が表示される。
 
 ## 3. 実行例
 
@@ -43,21 +43,24 @@ vB
 
 ## 4. ファイルの説明
 
-以下では、主プログラムを（主）、副プログラムを（副）と略記する  
+以下では、主プログラムを（主）、副プログラムを（副）と略記する。
 
 ### （1）新宿駅を出発駅に山手線内回りを1周するプログラム（early_works）
+プログラム作成当初はstationName.csvを読み込むのにpandasを用いたコードを記述していた。だが後で確認を行った際に正常に動作しないことがあったので、現在は（4）～（7）のプログラムと同様の方法を使いstationName.csvを読み込んでいる。  
 
 （主）yamanote_inner_track.py：内回り1周分の処理をするもの  
 （副）stationName.csv：山手線の駅名を内回りの順に並べたリスト  
 （副）rinnsetsuValueOnly2.csv：拡張した隣接行列で山手線の路線図を表現したもの  
 
 ### （2）新宿駅を出発駅に山手線外回りを1周するプログラム（early_works）
+プログラム作成当初はstationName.csvを読み込むのにpandasを用いたコードを記述していた。だが後で確認を行った際に正常に動作しないことがあったので、現在は（4）～（7）のプログラムと同様の方法を使いstationName.csvを読み込んでいる。  
 
 （主）yamanote_outer_track.py：外回り1周分の処理をするもの  
 （副）stationName.csv  
 （副）rinnsetsuValueOnly2.csv  
 
 ### （3）新宿駅を出発駅に山手線内回りor外回りを1周するプログラム（early_works）
+プログラム作成当初はstationName.csvを読み込むのにpandasを用いたコードを記述していた。だが後で確認を行った際に正常に動作しないことがあったので、現在は（4）～（7）のプログラムと同様の方法を使いstationName.csvを読み込んでいる。  
 
 （主）yamanote_func.py：内回りor外回り1周分の処理をするもの  
 （副）stationName.csv  
@@ -88,6 +91,7 @@ vB
 （副）ChuoSobuEkimei.csv  
 
 ### （8）出発駅、到着駅を入力して山手線、中央・総武線で最短路を探すプログラム（failure）
+このプログラムは正しく動作しないが、参考として掲載している。  
 
 （主）shortest_path_problem.py：中央・総武線と山手線で最短路を探し、その経路と累計所要時間をを表示するもの  
 （副）shortest_path_def.py：shortest_path_problem.pyで使う関数を定義するもの  
@@ -117,11 +121,12 @@ vB
 （主）shortest_path_process3.py：最短路自体と最短路の重みの合計を表示するもの  
 （副）shortest_path_class3.py：shortest_path_process2.pyの中の関数をメソッドに変え、shortest_path_process3.pyで使えるようにしたもの  
 
-### （13）始点、終点を入力して、複数のグラフを連結して最短路自体と最短路の重みの合計を求めるプログラム（Work_In_Progress）
+### （13）始点、終点を入力して、複数のグラフを連結して最短路自体と最短路の重みの合計を求めるプログラム（works_in_progress）
 
 （主）shortest_connected_process1.py：相異なるグラフに属する始点と終点を結ぶ最短路自体と最短路の重みの合計を表示するもの  
 （副）shortest_connected_class1.py：shortest_connected_process1.py：shortest_connected_process1で使うメソッドやクラスを定義したもの  
 
 
-
-
+## 5. early_works, failureフォルダに関する注意
+early_worksフォルダとfailureフォルダに入っているプログラムに関しては、文字コードがUTF-8の.csvファイルを使うと動作しなくなる恐れがある。  
+そのため、プログラムを動作させるための.csvファイルと、GitHubで表示するための(UTF-8).csvの両方を掲載している。
