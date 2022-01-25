@@ -121,10 +121,10 @@ vB
 （主）shortest_path_process3.py：最短路自体と最短路の重みの合計を表示するもの  
 （副）shortest_path_class3.py：shortest_path_process2.pyの中の関数をメソッドに変え、shortest_path_process3.pyで使えるようにしたもの  
 
-### （13）始点、終点を入力して、複数のグラフを連結して最短路自体と最短路の重みの合計を求めるプログラム（works_in_progress）
+### （13）始点、終点を入力して、複数のグラフを連結して最短路自体と最短路の重みの合計を求めるプログラム（object）
 
-（主）shortest_connected_process1.py：相異なるグラフに属する始点と終点を結ぶ最短路自体と最短路の重みの合計を表示するもの  
-（副）shortest_connected_class1.py：shortest_connected_process1.py：shortest_connected_process1で使うメソッドやクラスを定義したもの  
+（主）shortest_connected_process3.py：最短路自体と最短路の重みの合計を表示するもの（始点・終点とする2点が相異なるグラフに属していても動作する）  
+（副）shortest_connected_class3.py：shortest_connected_process3.pyで使うメソッドやクラスを定義したもの  
 
 
 ## 5. early_works, failureフォルダに関する注意
